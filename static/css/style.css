@@ -1,0 +1,2812 @@
+/* ========================================================================= */
+/* 1. GLOBAL STYLES & ROOT VARIABLES (LIGHT/DARK MODE & GLASSMOPHISM)        */
+/* ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================================================= */
+/* UPGRADED MODERN MEDICAL THEME - CLEAN, CLASSIFY & PEACEFUL */
+/* ========================================================================= */
+/* Modern Medical Theme - Light Blue */
+:root {
+    --primary-color: #4da6ff;      /* Soft light blue for calm and professional look */
+    --primary-dark: #1a8cff;       /* Darker blue for emphasis/hover */
+    --primary-light: #99ccff;      /* Light muted blue accent */
+    --secondary-color: #e6f2ff;    /* Very soft light blue background */
+    --success-color: #3a9d4c;      /* Keep green for healthy indicators */
+    --warning-color: #ffb74d;      /* Warm amber for alerts */
+    --error-color: #e5534b;        /* Gentle red for critical alerts */
+
+    /* UI Background & Text */
+    --text-primary: #1c2b3a;       /* Deep slate for readability */
+    --text-secondary: #526779;     /* Muted gray-blue for subtext */
+    --bg-light: #9ccbf5;           /* Softest light blue for page background */
+    --bg-white: #6c6c6c;            /* Card/panel base white */
+    --border-color: rgba(180, 200, 210, 0.5); /* Light bluish-gray border */
+
+    /* Glassmorphism Variables */
+    --glass-bg: rgba(255, 255, 255, 0.15); 
+    --glass-shadow: 0 8px 32px 0 rgba(0, 120, 255, 0.08);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+    --glass-backdrop-filter: blur(12px);
+}
+
+/* Dark Mode Colors - Adapted for Light Blue Theme */
+body.dark-mode {
+    --primary-color: #66b3ff;      /* Lighter blue for contrast */
+    --primary-dark: #1a8cff;       /* Darker accent */
+    --primary-light: #99ccff;      /* Light accent */
+    --secondary-color: #0f1f3a;    /* Dark blue accent background */
+    
+    /* UI Background & Text for Dark Mode */
+    --text-primary: #e0e0e0;
+    --text-secondary: #9e9e9e;
+    --bg-light: #0f1f3a;           /* Dark page background */
+    --bg-white: #1e2b44;           /* Solid card background */
+    --border-color: rgba(60, 60, 90, 0.8);
+
+    /* Glassmorphism Variables for Dark Mode */
+    --glass-bg: rgba(30, 40, 60, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-light);
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Global button styles */
+button, .btn-primary, .btn-secondary, .btn-hero, .btn-upload-primary, .btn-upload-secondary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
+.btn-icon {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 8px;
+    border-radius: 50%;
+}
+.btn-icon:hover {
+    background: var(--border-color);
+}
+
+.mode-toggle-btn {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* ========================================================================= */
+/* 2. LANDING PAGE STYLES (index.html) - Focus on Glassmorphism structure     */
+/* ========================================================================= */
+
+.landing-page {
+    min-height: auto; /* allow content to determine height */
+    overflow: visible; /* ensure vertical scroll works */
+}
+body.dark-mode .landing-page {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep dark blue gradient */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Makes navbar stay at the top */
+    top: 0;           /* Position at top */
+    left: 0;          /* Align to left */
+    width: 100%;      /* Full width */
+    z-index: 1000;    /* Stay above other content */
+}
+
+/* Navbar links */
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s;
+}
+.navbar .btn-primary {
+    color: #fff; /* text color */
+    background-color: var(--primary-color); /* optional: keep button background modern */
+    border: none;                         /* optional: remove border */
+    transition: all 0.3s ease;           /* smooth hover effect */
+}
+
+.navbar .btn-primary:hover {
+    color: #fff;                          /* text color on hover */
+    background-color: rgba(33, 17, 147, 0.2); /* subtle hover effect */
+}
+
+
+/* Hover effect */
+.navbar a:hover {
+    color: #ff6b6b;
+    transform: scale(1.05);
+}
+
+/* Logo styling */
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Responsive menu for small screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    
+    .navbar a {
+        margin: 10px 0;
+    }
+}
+
+/* Add padding to body to prevent content overlap */
+body {
+    padding-top: 70px; /* same as navbar height + padding */
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+.nav-links a:hover {
+    background: var(--glass-bg); /* Subtle Glass hover for links */
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 20px 140px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically */
+    min-height: 100vh;
+    text-align: center;
+    background-color: var(--hero-bg); /* keep original color */
+    color: var(--text-primary, #fff);
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* center everything inside */
+    gap: 30px;            /* spacing between title, subtitle, buttons */
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 3.5rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+    max-width: 550px; /* limit width for better readability */
+}
+
+/* Call to Action Buttons */
+.hero-cta {
+    display: flex;
+    justify-content: center; /* center buttons */
+    gap: 25px;               /* space between buttons */
+    flex-wrap: wrap;
+}
+
+/* Hero Buttons */
+.btn-hero {
+    padding: 16px 36px;
+    font-size: 1.15rem;
+    border-radius: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary Button */
+.btn-hero-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-hero-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Secondary Button */
+.btn-hero-secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.btn-hero-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Hero Animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+        max-width: 90%;
+    }
+
+    .hero-cta {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Hero Image Container */
+.hero-image {
+    position: relative;
+    width: 100%;
+    display: flex;                  /* enable flex layout */
+    justify-content: center;        /* center cards horizontally */
+    align-items: flex-start;        /* align from top */
+    gap: 180px;                      /* space between each card */
+    margin-top: 70px;               /* distance from top of hero section */
+}
+
+/* Floating Cards - Modern Glassmorphism */
+.floating-card {
+    padding: 40px 50px;
+    border-radius: 16px;.floating-card {
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+
+    /* Glassmorphism styles */
+    background: var(--glass-bg, rgba(255, 255, 255, 0.15));
+    box-shadow: var(--glass-shadow, 0 8px 32px rgba(0, 0, 0, 0.15));
+    backdrop-filter: var(--glass-backdrop-filter, blur(12px));
+    -webkit-backdrop-filter: var(--glass-backdrop-filter, blur(12px));
+    border: var(--glass-border, 1px solid rgba(255, 255, 255, 0.3));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+
+    position: relative;   /* changed from absolute */
+}
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+
+    /* Glassmorphism styles */
+    background: var(--glass-bg, rgba(255, 255, 255, 0.15));
+    box-shadow: var(--glass-shadow, 0 8px 32px rgba(0, 0, 0, 0.15));
+    backdrop-filter: var(--glass-backdrop-filter, blur(12px));
+    -webkit-backdrop-filter: var(--glass-backdrop-filter, blur(12px));
+    border: var(--glass-border, 1px solid rgba(255, 255, 255, 0.3));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Card hover effect */
+.floating-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon Styling */
+.floating-card i {
+    color: var(--primary-color, #ff6b6b);
+    font-size: 1.3rem;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-image {
+        padding-right: 3%;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+        align-items: center; /* center cards on mobile */
+        padding-right: 0;
+        gap: 25px;
+    }
+    .floating-card {
+        width: 80%; /* scale down on mobile */
+    }
+}
+
+
+/* Features Section */
+.features {
+    padding: 100px 20px;
+    background: var(--bg-white);
+    transition: background-color 0.3s ease;
+}
+
+/* Section Title & Subtitle */
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* Feature Card */
+.feature-card {
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Glassmorphism */
+    background: var(--glass-bg, rgba(255, 255, 255, 0.15)); 
+    box-shadow: var(--glass-shadow, 0 8px 32px rgba(0, 0, 0, 0.1));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: var(--glass-border, 1px solid rgba(255, 255, 255, 0.2));
+}
+
+/* Hover Effect */
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature Icon */
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+/* Feature Title & Text */
+.feature-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .features-grid {
+        gap: 30px;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+}
+/* How It Works Section */
+.how-it-works {
+    padding: 100px 20px;
+    background: var(--secondary-color);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .how-it-works {
+    background: #0f2027; /* Dark background accent */
+}
+
+/* Steps Container - horizontal alignment */
+.steps {
+    display: flex;
+    justify-content: space-between; /* spread steps evenly */
+    align-items: flex-start;
+    flex-wrap: nowrap;              /* prevent wrapping */
+    gap: 40px;                      /* space between steps */
+    margin-top: 60px;
+}
+
+/* Individual Step Card */
+.step {
+    flex: 0 1 250px;                /* fixed width per card */
+    text-align: center;
+    padding: 40px 25px;
+    border-radius: 20px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Glassmorphism Styles */
+    background: var(--glass-bg, rgba(255, 255, 255, 0.15)); 
+    box-shadow: var(--shadow, 0 8px 32px rgba(0, 0, 0, 0.1));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: var(--glass-border, 1px solid rgba(255, 255, 255, 0.2));
+}
+
+/* Hover Effect */
+.step:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Step Number Circle */
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional hover animation for number */
+.step:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Divider Between Steps */
+.step-divider {
+    flex: 0 1 60px;              /* slightly longer divider */
+    height: 3px;                  /* thicker line */
+    background-color: var(--primary-light);
+    margin: 25px 0;
+    align-self: center;
+    border-radius: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .steps {
+        gap: 30px;
+    }
+
+    .step {
+        padding: 35px 20px;
+    }
+
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .step-divider {
+        width: 60px;
+        height: 2px;
+    }
+}
+/* CTA Section inside How It Works */
+.cta-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
+/* CTA Button */
+.cta-section .btn-hero {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    border-radius: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+.cta-section .btn-hero:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    background-color: darken(var(--primary-color), 10%); /* optional: slightly darker */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cta-section .btn-hero {
+        width: 80%; /* make button full width on small screens */
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    background-color: var(--bg-white);
+    padding: 50px 20px 25px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* allows responsiveness on smaller screens */
+    justify-content: space-evenly; /* evenly distributes sections */
+    gap: 50px; /* space between sections */
+    align-items: flex-start; /* aligns all sections at the top */
+    margin-bottom: 30px;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1 1 250px; /* flexible width for modern layout */
+    min-width: 220px;
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ensures perfect centering horizontally */
+    justify-content: flex-start; /* keeps content aligned from the top */
+}
+
+/* Section Headings */
+.footer-section h4 {
+    color: var(--text-primary);
+    margin-bottom: 14px; /* slightly improved spacing for balance */
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* Footer Links Horizontal */
+.footer-links-horizontal {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* centers the list within the section */
+    display: flex;
+    justify-content: center; /* centers all items horizontally */
+    align-items: center;
+    gap: 0; /* separators handle spacing */
+    flex-wrap: wrap; /* responsive wrapping */
+}
+
+/* Each list item */
+.footer-links-horizontal li {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Separator between links */
+.footer-links-horizontal li + li::before {
+    content: "|";
+    margin: 0 12px;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+/* Footer Links */
+.footer-links-horizontal a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    line-height: 1.8;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Hover effect - clean modern motion */
+.footer-links-horizontal a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+
+/* Disclaimer Text */
+.footer-section .disclaimer-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-section {
+        min-width: auto;
+        text-align: center;
+    }
+
+    .footer-links-horizontal {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-links-horizontal li + li::before {
+        display: none; /* remove | on mobile for cleaner look */
+    }
+}
+
+
+/* ========================================================================= */
+/* 3. CHAT PAGE STYLES (chat.html) - Focus on Glassmorphism structure        */
+/* ========================================================================= */
+
+.chat-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg-light); /* Main background for blur effect */
+    transition: var(--transition);
+}
+
+/* Sidebar - Glassmorphism Application */
+/* =========================================================================
+   SIDEBAR STYLES (Enhanced for Dark/Light Mode)
+   ========================================================================= */
+.sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    z-index: 10;
+    
+    /* Apply Glass Styles */
+    background: var(--glass-bg);
+    border-right: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-backdrop-filter);
+    -webkit-backdrop-filter: var(--glass-backdrop-filter);
+
+    /* Smooth transition for mode changes */
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.sidebar-header,
+.sidebar-footer {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+}
+
+.sidebar-footer {
+    border-top: 1px solid var(--border-color);
+    border-bottom: none;
+}
+
+/* Sidebar scrollable content */
+.sidebar-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 20px;
+}
+
+/* USER INFO */
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.user-info i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* NEW CHAT BUTTON */
+.btn-new-chat {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+.btn-new-chat:hover {
+    background-color: var(--primary-dark);
+}
+
+/* CURRENT REPORT + HISTORY SECTIONS */
+.current-report,
+.history-section {
+    margin-bottom: 20px;
+}
+
+.current-report {
+    padding: 15px;
+    border-radius: 12px;
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+.current-report h3,
+.history-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+/* SUMMARY + HISTORY ITEMS */
+.report-summary {
+    font-size: 0.9rem;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.summary-stats {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.stat-badge {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.stat-badge.normal { background: var(--success-color); color: #fff; }
+.stat-badge.abnormal { background: var(--error-color); color: #fff; }
+
+.history-item {
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+.history-item:hover {
+    background: var(--hover-bg);
+    border-color: var(--primary-color);
+    transform: translateX(2px);
+}
+.history-date {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+.history-info {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 20px 0;
+}
+
+/* =========================================================================
+   DARK MODE OVERRIDES
+   ========================================================================= */
+body.dark-mode {
+    --glass-bg: rgba(20, 20, 30, 0.6);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --panel-bg: rgba(40, 40, 55, 0.8);
+    --hover-bg: rgba(60, 60, 80, 0.9);
+
+    --text-primary: #f5f5f5;
+    --text-secondary: #b3b3b3;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --bg-white: #1c1c28;
+    --primary-dark: #6eb2ff;
+}
+
+/* Light mode base (for fallback clarity) */
+body:not(.dark-mode) {
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: 1px solid rgba(0, 0, 0, 0.05);
+    --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --panel-bg: rgba(255, 255, 255, 0.8);
+    --hover-bg: rgba(240, 240, 240, 0.9);
+
+    --text-primary: #222;
+    --text-secondary: #555;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --bg-white: #ffffff;
+    --primary-dark: #004aad;
+}
+
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: transparent; /* Allows sidebar blur effect to work */
+}
+
+/* Upload Section */
+.upload-section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+/* Upload Card - Glassmorphism Application */
+.upload-card {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    
+    /* Apply Glass Styles */
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-backdrop-filter);
+    -webkit-backdrop-filter: var(--glass-backdrop-filter);
+    border: var(--glass-border);
+}
+.upload-icon i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.upload-methods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-secondary);
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+.divider:not(:empty)::before {
+    margin-right: .25em;
+}
+.divider:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.text-input-area {
+    margin-top: 20px;
+    text-align: left;
+}
+.text-input-area textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-white);
+    color: var(--text-primary);
+    resize: vertical;
+    transition: var(--transition);
+}
+.btn-submit-text {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    width: 100%;
+}
+
+.upload-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+.upload-info p {
+    margin-bottom: 5px;
+}
+
+/* Analysis Section */
+.analysis-section {
+    flex-grow: 1;
+    display: none; /* Controlled by JS */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+}
+.analysis-header {
+    margin-bottom: 40px;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 16px;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-lg);
+}
+.progress-bar {
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.5s ease;
+}
+.analysis-steps {
+    display: flex;
+    gap: 30px;
+}
+.step-item {
+    opacity: 0.5;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.step-item.active {
+    opacity: 1;
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+.step-item i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Chat Section */
+.chat-section {
+    flex-grow: 1;
+    display: none; /* Controlled by JS */
+    flex-direction: column;
+}
+
+/* Chat Header - Glassmorphism Application */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    
+    /* Apply Glass Styles */
+    background: var(--glass-bg);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 5;
+}
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+.chat-actions .btn-icon {
+    font-size: 1.1rem;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: transparent; /* Allows main content background to show */
+}
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.message-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+.assistant-message .message-avatar {
+    background-color: var(--primary-light);
+    color: var(--bg-white);
+    margin-right: 15px;
+}
+.user-message .message-avatar {
+    background-color: var(--text-primary);
+    color: var(--bg-white);
+    margin-left: 15px;
+    order: 2;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    line-height: 1.4;
+    box-shadow: var(--shadow);
+}
+.assistant-message .message-content {
+    background-color: var(--bg-white);
+    color: var(--text-primary);
+    border-bottom-left-radius: 4px;
+}
+.user-message {
+    justify-content: flex-end;
+}
+.user-message .message-content {
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
+    border-bottom-right-radius: 4px;
+    order: 1;
+}
+
+.quick-questions {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.quick-btn {
+    background-color: var(--primary-light);
+    color: var(--bg-white);
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+}
+.quick-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Typing Indicator */
+.typing-indicator .typing-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: bounce 1.2s infinite ease-in-out;
+}
+.typing-indicator .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.typing-indicator .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+@keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+}
+
+/* Chat Input */
+.chat-input-container {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-white); /* Solid base for input area */
+}
+.chat-input-wrapper {
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--bg-light);
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+}
+.chat-input-wrapper textarea {
+    flex-grow: 1;
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 10px 15px;
+    max-height: 150px;
+    background-color: transparent;
+    color: var(--text-primary);
+    font-family: inherit;
+    line-height: 1.4;
+}
+.btn-send {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 16px;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+.btn-send:disabled {
+    background-color: var(--text-secondary);
+    cursor: not-allowed;
+}
+.input-suggestions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+}
+.suggestion-label {
+    color: var(--text-secondary);
+    line-height: 2.2;
+}
+.suggestion {
+    background: var(--border-color);
+    color: var(--text-primary);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+.suggestion:hover {
+    background: var(--primary-light);
+    color: var(--bg-white);
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    width: 90%;
+    max-width: 700px;
+    border-radius: 20px;
+    padding: 30px;
+    
+    /* Inherits Glass Styles from .glass-card in HTML */
+    
+    /* Fallback for non-glass elements */
+    background: var(--bg-white); 
+    box-shadow: var(--shadow-lg);
+    
+    transition: var(--transition);
+    transform: scale(0.9);
+    animation: modal-open 0.3s forwards ease-out;
+}
+.modal-large {
+    max-width: 900px;
+}
+@keyframes modal-open {
+    to { transform: scale(1); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.modal-header h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+.btn-close {
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+.btn-close:hover {
+    color: var(--error-color);
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+.results-table th, .results-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.results-table th {
+    background-color: var(--secondary-color);
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+body.dark-mode .results-table th {
+    background-color: #2c3e50;
+    color: var(--primary-light);
+}
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.status-badge.normal { background-color: var(--success-color); color: white; }
+.status-badge.low { background-color: var(--warning-color); color: var(--text-primary); }
+.status-badge.high { background-color: var(--error-color); color: white; }
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    color: white;
+    font-size: 1.2rem;
+}
+.spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: var(--glass-border);
+        box-shadow: none;
+    }
+    .sidebar-content {
+        max-height: 250px; /* Collapse history/report on small screens */
+    }
+    .chat-section {
+        height: auto;
+    }
+    .steps {
+        flex-direction: column;
+    }
+    .step-divider {
+        width: 2px;
+        height: 50px;
+        margin: 20px auto;
+    }
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================================================
+   ANALYZER SECTION
+   ========================================================================= */
+.analyzer-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Use viewport height */
+    background: var(--bg-light);
+    position: relative;
+    overflow: hidden; /* Contain the scrolling */
+}
+
+.analyzer-header {
+    background: var(--bg-white);
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    flex-shrink: 0; /* Prevent header from shrinking */
+    border-radius: 0 0 10px 10px;
+}
+
+.analyzer-header h2 {
+    font-size: 22px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.analyzer-content {
+    flex: 1;
+    overflow-y: auto; /* This enables scrolling */
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 0; /* CRITICAL for flex child scrolling */
+}
+
+/* Tabs */
+.analyzer-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    background: var(--bg-white);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.tab-btn:hover:not(.active) {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Analyzer Table Container - Make it scrollable */
+.analyzer-table-container {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Important for scrolling */
+}
+
+.analyzer-table {
+    width: 100%;
+    border-collapse: collapse;
+    flex: 1;
+}
+
+/* Make the table body scrollable if needed */
+.analyzer-table tbody {
+    display: block;
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto;
+}
+
+.analyzer-table thead,
+.analyzer-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.analyzer-table thead {
+    background: var(--primary-color);
+    color: white;
+}
+
+.analyzer-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.analyzer-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.analyzer-table tbody tr:hover {
+    background: var(--secondary-color);
+}
+
+/* Editable Inputs */
+.analyzer-table input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-light);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+/* Buttons inside table */
+.btn-edit, .btn-save {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-edit {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-edit:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-save {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-save:hover {
+    filter: brightness(1.1);
+}
+
+/* Temporary debug styles */
+.analyzer-section {
+    border: 2px solid red !important; /* Should see red border */
+}
+
+.analyzer-table-container {
+    border: 2px solid blue !important; /* Should see blue border */
+}
+
+.analyzer-table {
+    border: 2px solid green !important; /* Should see green border */
+}
+
+.analyzer-table tbody {
+    border: 2px solid orange !important; /* Should see orange border */
+}
+
+
+/* =========================================================================
+   VISUALIZE SECTION
+   ========================================================================= */
+.visualize-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-light);
+}
+
+.visualize-header {
+    background: var(--bg-white);
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    border-radius: 0 0 10px 10px;
+}
+
+.visualize-header h2 {
+    font-size: 22px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.visualize-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.chart-container {
+    background: var(--bg-white);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.chart-container:hover {
+    transform: translateY(-2px);
+}
+
+.chart-container canvas {
+    max-height: 400px;
+    width: 100%;
+}
+
+
+/* =========================================================================
+   CORRELATIONS SECTION
+   ========================================================================= */
+.correlations-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-light);
+}
+
+.correlations-header {
+    background: var(--bg-white);
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    border-radius: 0 0 10px 10px;
+}
+
+.correlations-header h2 {
+    font-size: 22px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.correlations-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.correlation-card {
+    background: var(--bg-white);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--warning-color);
+    transition: var(--transition);
+}
+
+.correlation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.correlation-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.correlation-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.no-correlations {
+    background: var(--bg-white);
+    padding: 48px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.no-correlations i {
+    font-size: 60px;
+    color: var(--success-color);
+    margin-bottom: 16px;
+}
+
+.no-correlations h3 {
+    color: var(--success-color);
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================================
+   CLEAR HISTORY BUTTON
+   ========================================================================= */
+.btn-clear-history {
+    padding: 12px;
+    background: rgba(229, 83, 75, 0.1);
+    border: 1px solid var(--error-color);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-weight: 500;
+    color: var(--error-color);
+}
+
+.btn-clear-history:hover {
+    background: var(--error-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================================
+   FORMS & MODALS
+   ========================================================================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 15px;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 120, 140, 0.2);
+}
+
+.modal-small {
+    max-width: 500px;
+}
+
+/* Trends Modal Fixed Height */
+#trendsModal .modal-content {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#trendsModal .modal-body {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(85vh - 80px);
+}
+
+.trend-chart {
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--bg-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.trend-chart h3 {
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.trend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--bg-white);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: var(--shadow);
+}
+
+.trend-date {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.trend-value {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+/* =========================================================================
+   SIDEBAR FOOTER - MODERN ALIGNMENT & UI REFINEMENT
+   ========================================================================= */
+
+/* --- CSS Variable Definitions for the Footer (Optional but good practice) --- */
+/* Assuming global variables like --primary-color, --error-color, etc., exist */
+.sidebar-footer {
+    --footer-padding: 20px;
+    --button-gap: 10px;
+    --button-padding: 14px 16px;
+    --border-radius: 12px;
+    --icon-size: 18px;
+    --transition-speed: 0.2s;
+}
+
+/* --- Base Footer Container --- */
+.sidebar-footer {
+    padding: var(--footer-padding);
+    border-top: 1px solid var(--border-color);
+    /* background: transparent; Removed, as it's often the default or inherited */
+    display: flex;
+    flex-direction: column;
+    gap: var(--button-gap);
+}
+
+
+.sidebar-footer .btn-trends,
+.sidebar-footer .btn-about {
+    /* Layout and Alignment */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    /* Spacing and Shape */
+    padding: var(--button-padding);
+    width: 100%;
+    border: 2px solid var(--border-color); /* Base border */
+    border-radius: var(--border-radius);
+
+    /* Typography */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+
+    /* Color and Interaction */
+    background: var(--bg-white);
+    color: var(--text-primary);
+    transition: all var(--transition-speed) ease; /* Use 'all' for smoother transition */
+}
+
+/* --- Button Specific States/Colors --- */
+
+/* Trends Button (Primary Action) */
+.sidebar-footer .btn-trends {
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Clear History Button (Destructive Action) */
+.sidebar-footer .btn-clear-history {
+    background: color-mix(in srgb, var(--error-color) 10%, transparent); /* Modern approach for opacity */
+    border-color: var(--error-color);
+    color: var(--error-color);
+    border-left: 4px solid var(--error-color);
+}
+
+/* About Button (Secondary/Informational) */
+.sidebar-footer .btn-about {
+    border-left: 4px solid var(--text-secondary);
+}
+
+/* --- Hover and Focus Effects (Modern & Subtle) --- */
+
+.sidebar-footer .btn-trends:hover,
+.sidebar-footer .btn-about:hover {
+    background: var(--secondary-color);
+    border-color: var(--primary-color); /* Better focus on the *primary* purpose/color on hover for visual hierarchy */
+    transform: translateY(-1px); /* More subtle lift */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Lighter, modern shadow */
+}
+
+.sidebar-footer .btn-clear-history:hover {
+    background: var(--error-color);
+    color: var(--bg-white); /* Use var(--bg-white) instead of 'white' for dark mode compatibility */
+    border-color: var(--error-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Active State for Trends Button --- */
+.sidebar-footer .btn-trends.active {
+    background: var(--primary-color);
+    color: var(--bg-white);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg); /* Keep the strong active shadow */
+    transform: none; /* Reset transform on active state */
+}
+
+/* --- Icon Alignment and Consistency --- */
+.sidebar-footer i { /* Simplified selector for all icons within the footer */
+    flex-shrink: 0; /* Prevents icon from shrinking on small screens */
+    width: var(--icon-size);
+    text-align: center;
+    font-size: 15px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .sidebar-footer {
+        --button-gap: 8px; /* Smaller gap */
+        --footer-padding: 15px; /* Smaller padding */
+        --icon-size: 16px;
+    }
+
+    .sidebar-footer .btn-trends,
+    .sidebar-footer .btn-clear-history,
+    .sidebar-footer .btn-about {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .sidebar-footer i {
+        font-size: 14px;
+    }
+}
+/* =========================================================================
+   IMPROVED HISTORY SECTION - COLLAPSIBLE
+   ========================================================================= */
+.history-section {
+    margin-bottom: 15px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-toggle {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.history-toggle:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.history-content {
+    max-height: 200px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease;
+}
+
+.history-content.collapsed {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.history-count {
+    background: var(--primary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Compact history items */
+.history-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    font-size: 0.85rem;
+}
+
+.history-item:hover {
+    background: var(--secondary-color);
+    border-color: var(--primary-color);
+    transform: translateX(2px);
+}
+
+.history-date {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.history-info {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.history-stats {
+    display: flex;
+    gap: 6px;
+}
+
+.history-stat {
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.history-stat.normal {
+    background: var(--success-color);
+    color: white;
+}
+
+.history-stat.abnormal {
+    background: var(--error-color);
+    color: white;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+/* ========================================================================= */
+/* IMPROVED ELASTIC SCROLL & BLACK SPACE FIXES                              */
+/* ========================================================================= */
+
+/* Only apply scrolling restrictions to chat pages */
+.chat-container {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    overscroll-behavior: none;
+}
+
+/* Landing page should scroll normally */
+.landing-page {
+    height: auto;
+    overflow: visible;
+}
+
+.landing-page body {
+    height: auto;
+    overflow: auto;
+}
+
+/* Rest of your existing chat scrolling styles below... */
+.chat-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overscroll-behavior: none;
+    position: relative;
+}
+
+
+/* Messages area - only this should scroll */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0; /* Critical for flex scrolling */
+    overscroll-behavior: contain; /* Allow natural scrolling within messages */
+    -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-light) transparent;
+    
+    /* Prevent elastic bounce on iOS */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Webkit scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* Input container - fixed at bottom */
+.chat-input-container {
+    flex-shrink: 0;
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 10;
+}
+
+/* Fix for iOS Safari specifically */
+@supports (-webkit-touch-callout: none) {
+    .chat-container {
+        height: -webkit-fill-available;
+    }
+    
+    .chat-messages {
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll; /* Force scroll on iOS */
+    }
+}
+
+/* Prevent black space on overscroll */
+.chat-messages {
+    background: var(--bg-light);
+}
+
+/* Ensure no elastic scroll on the entire page */
+body {
+    overscroll-behavior-y: none;
+}
+
+/* Allow bounce only in messages area when at boundaries */
+.chat-messages {
+    overscroll-behavior-y: auto;
+}
+
+/* Fix for mobile browsers */
+@media (max-width: 768px) {
+    .chat-container {
+        height: 100dvh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .chat-messages {
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: env(safe-area-inset-bottom); /* Account for notch */
+    }
+    
+    .chat-input-container {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Emergency fix for black space */
+.chat-messages::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: var(--bg-light);
+    z-index: -1;
+}
+
+/* Ensure messages wrapper doesn't cause overflow */
+.messages-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fix for when content is too short */
+.chat-messages:has(.message:only-child) {
+    justify-content: flex-start;
+}
+/* =========================================================================
+   SIDEBAR HEADER - IMPROVED ALIGNMENT & CLEAN DESIGN
+   ========================================================================= */
+.sidebar-header {
+    padding: 24px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.sidebar-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.sidebar-header h2 i {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    width: 24px;
+    text-align: center;
+}
+
+.btn-new-chat {
+    width: 100%;
+    background: var(--primary-color);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 120, 140, 0.2);
+}
+
+.btn-new-chat:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 120, 140, 0.3);
+}
+
+.btn-new-chat:active {
+    transform: translateY(0);
+}
+
+.btn-new-chat i {
+    font-size: 1rem;
+    width: 16px;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .sidebar-header h2 {
+    color: var(--primary-light);
+}
+
+body.dark-mode .sidebar-header h2 i {
+    color: var(--primary-color);
+}
+
+body.dark-mode .btn-new-chat {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar-header {
+        padding: 20px 16px;
+        gap: 12px;
+    }
+    
+    .sidebar-header h2 {
+        font-size: 1.3rem;
+        gap: 10px;
+    }
+    
+    .sidebar-header h2 i {
+        font-size: 1.4rem;
+        width: 20px;
+    }
+    
+    .btn-new-chat {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+}
+/* ========================================================================= */
+/* ENHANCED SMOOTHNESS & CLEANER UI UPDATES                                 */
+/* ========================================================================= */
+
+/* Improved smooth scrolling throughout */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced button smoothness */
+button, .btn-primary, .btn-secondary, .btn-hero {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Cleaner hover effects */
+.btn-primary:hover, .btn-hero-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 120, 140, 0.25);
+}
+
+.btn-secondary:hover, .btn-hero-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced glassmorphism cards */
+.floating-card, .feature-card, .step, .upload-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateZ(0);
+}
+
+.floating-card:hover, .feature-card:hover, .step:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved input fields */
+.form-control, .chat-input-wrapper textarea, .text-input-area textarea {
+    transition: all 0.25s ease;
+    border: 2px solid var(--border-color);
+}
+
+.form-control:focus, .chat-input-wrapper textarea:focus, .text-input-area textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 120, 140, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Enhanced navigation smoothness */
+.nav-links a {
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    transform: translateY(-1px);
+    background: var(--glass-bg);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+/* Improved loading states */
+.loading-overlay {
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top: 3px solid white;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Enhanced table interactions */
+.analyzer-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.analyzer-table tbody tr:hover {
+    transform: translateX(4px);
+    background: var(--secondary-color);
+}
+
+/* Better modal animations */
+.modal-content {
+    animation: modalSlideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Improved chat message transitions */
+.message {
+    animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced progress indicators */
+.progress-fill {
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Better focus states for accessibility */
+button:focus-visible, 
+a:focus-visible, 
+.form-control:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Improved dark mode transitions */
+body.dark-mode {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Enhanced sidebar interactions */
+.sidebar {
+    transition: all 0.3s ease;
+}
+
+.history-item, .sidebar-footer button {
+    transition: all 0.2s ease;
+}
+
+.history-item:hover {
+    transform: translateX(4px);
+}
+
+/* Smooth scrolling containers */
+.chat-messages, .analyzer-content, .visualize-content {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-light) transparent;
+}
+
+.chat-messages::-webkit-scrollbar,
+.analyzer-content::-webkit-scrollbar,
+.visualize-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track,
+.analyzer-content::-webkit-scrollbar-track,
+.visualize-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb,
+.analyzer-content::-webkit-scrollbar-thumb,
+.visualize-content::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 3px;
+}
+
+/* Enhanced typing indicator */
+.typing-indicator .typing-dot {
+    animation: bounce 1.2s infinite ease-in-out;
+    transform: translateZ(0);
+}
+
+/* Improved responsive transitions */
+@media (max-width: 768px) {
+    .hero-title, .section-title {
+        transition: font-size 0.3s ease;
+    }
+    
+    .features-grid, .steps {
+        transition: grid-template-columns 0.3s ease, flex-direction 0.3s ease;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* ========================================================================= */
+/* TOGGLEABLE SIDEBAR FOR CHAT INTERFACE                                    */
+/* ========================================================================= */
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+.sidebar-toggle:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Toggleable Sidebar States */
+.chat-container {
+    transition: padding-left 0.3s ease;
+}
+
+.chat-container.sidebar-collapsed {
+    padding-left: 0;
+}
+
+.sidebar {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Main content adjustment when sidebar is collapsed */
+.main-content.sidebar-expanded {
+    margin-left: 0;
+}
+
+/* Overlay for mobile when sidebar is open */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Sidebar Behavior */
+@media (max-width: 1024px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1000;
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .sidebar-toggle {
+        display: flex;
+    }
+    
+    .chat-container {
+        padding-left: 0 !important;
+    }
+    
+    .main-content {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 280px;
+    }
+    
+    .sidebar-toggle {
+        top: 15px;
+        left: 15px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Desktop hover effects */
+@media (min-width: 1025px) {
+    .sidebar {
+        position: relative;
+    }
+    
+    .sidebar.collapsed {
+        transform: translateX(-100%);
+    }
+    
+    .chat-container:not(.sidebar-collapsed) .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Smooth transitions for sidebar content */
+.sidebar-content,
+.sidebar-header,
+.sidebar-footer {
+    transition: opacity 0.2s ease;
+}
+
+.sidebar.collapsed .sidebar-content,
+.sidebar.collapsed .sidebar-header,
+.sidebar.collapsed .sidebar-footer {
+    opacity: 0;
+}
+
+/* Close button inside sidebar for mobile */
+.sidebar-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    z-index: 1002;
+    transition: color 0.3s ease;
+}
+
+.sidebar-close:hover {
+    color: var(--error-color);
+}
+
+@media (max-width: 1024px) {
+    .sidebar-close {
+        display: block;
+    }
+}
+
+/* Animation for sidebar toggle icon */
+.sidebar-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.sidebar-toggle.active i {
+    transform: rotate(180deg);
+}

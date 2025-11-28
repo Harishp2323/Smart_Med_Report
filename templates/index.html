@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBC Report Analyzer - AI Medical Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="landing-page">
+    <header class="hero">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>CBC Analyzer AI</span>
+          </div>
+          <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            
+            <button id="modeToggleBtn" class="btn-icon nav-button mode-toggle-btn" title="Toggle Light/Dark Mode">
+              <i class="fas fa-moon"></i> 
+            </button>
+            <a href="/chat" class="btn-primary">Get Started</a>
+          </div>
+        </nav>
+        
+                <div class="hero-wrapper">
+          <div class="hero-content">
+            <h1 class="hero-title">Your Personal CBC Report Assistant</h1>
+            <p class="hero-subtitle">
+              Upload your Complete Blood Count report and get instant AI-powered analysis, 
+              insights, and answers to all your questions
+            </p>
+            <div class="hero-cta">
+              <a href="/chat" class="btn-hero">
+                <i class="fas fa-upload"></i> Upload Your Report
+              </a>
+              <a href="#how-it-works" class="btn-secondary">
+                <i class="fas fa-play-circle"></i> Watch Demo
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <div class="floating-card card-1">
+              <i class="fas fa-check-circle"></i>
+              <span>Instant Analysis</span>
+            </div>
+            <div class="floating-card card-2">
+              <i class="fas fa-chart-line"></i>
+              <span>Track Trends</span>
+            </div>
+            <div class="floating-card card-3">
+              <i class="fas fa-robot"></i>
+              <span>AI Assistant</span>
+            </div>
+          </div>
+                </div>
+                      </div>
+    </header>
+
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">Powerful Features</h2>
+        <p class="section-subtitle">Everything you need to understand your blood test results</p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-file-medical"></i>
+            </div>
+            <h3>Smart OCR</h3>
+            <p>Upload any CBC report - scanned, PDF, or image. Our AI extracts all data automatically.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>AI Analysis</h3>
+            <p>Get instant interpretation of your results with medical AI trained on thousands of reports.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Interactive Chat</h3>
+            <p>Ask any question about your results and get detailed, personalized answers instantly.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3>Trend Analysis</h3>
+            <p>Upload multiple reports over time to track changes and identify patterns.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Privacy First</h3>
+            <p>Your data is encrypted and stored securely. We never share your medical information.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>24/7 Available</h3>
+            <p>Access your reports and get answers anytime, anywhere, on any device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Get insights in 4 simple steps</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Upload Report</h3>
+              <p>Upload your CBC report as PDF, image, or scanned document</p>
+            </div>
+          </div>
+
+          <div class="step-divider"></div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>AI Extraction</h3>
+              <p>Our AI automatically extracts all parameters and values</p>
+            </div>
+          </div>
+
+          <div class="step-divider"></div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Instant Analysis</h3>
+              <p>Get comprehensive analysis with normal/abnormal flagging</p>
+            </div>
+          </div>
+
+          <div class="step-divider"></div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Ask Questions</h3>
+              <p>Chat with AI to understand your results better</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <a href="/chat" class="btn-hero btn-primary">Try It Now - It's Free</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-heartbeat"></i> CBC Analyzer AI</h4>
+                <p>Your trusted medical assistant for blood test analysis</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links-horizontal">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="/chat">Get Started</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Disclaimer</h4>
+                <p class="disclaimer-text">
+                This tool is for informational purposes only. Always consult your healthcare provider for medical advice.
+                </p>
+            </div>
+            </div>
+            <div class="footer-bottom">
+            <p>&copy; 2025 CBC Analyzer AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  <script>
+    // JavaScript for Dark Mode Toggle
+    const modeToggleBtn = document.getElementById('modeToggleBtn');
+    const body = document.body;
+    const icon = modeToggleBtn.querySelector('i');
+
+    modeToggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      // Update icon based on mode
+      if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Load theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+  </script>
+</body>
+</html>
